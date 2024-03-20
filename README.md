@@ -1,2 +1,4 @@
-# web-330
-Classwork for web-330 at Bellevue University
+# WEB 330 Enterprise JavaScript II
+## Contributors
+* Kylie Struhs
+* Richard Krasso
