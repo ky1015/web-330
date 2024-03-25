@@ -5,46 +5,53 @@
 
       Project to create a timer object
       Author: Kylie Struhs
-      Date:   March 24 2024
+      Date:   March 23 2024
 
       Filename: project08-01.js
 */
 
 /*--------------- Object Code --------------------*/
 
+
 /* Constructor function for the timer object, two parameters (min, sec) */
 function timer(min, sec) {
   timer.minutes = min;
   timer.seconds = sec;
   timer.timeID = null;
-}
+  console.log("Creating timer instance");
+  console.log("Create instance. Minutes:Seconds = " + timer.minutes + ":" + timer.seconds);
+  }
 
 // add runPause method to timer prototype
-
-timer.prototype.runPause = function () {
+timer.prototype.runPause = function() {
   if (timer.timeID) {
+    console.log("TimeID was truthy, clearing interval and setting timeID to null");
     window.clearInterval(timer.timeID);
     timer.timeID = null;
-    console.log("first if statement");
   } else {
+    console.log("TimeID was null, starting timer calling countdown");
     timer.timeID = window.setInterval(countdown, 1000);
-    console.log("in else statement");
+
   }
 
   // countdown function, updates timer every second
   function countdown() {
+    console.log("Entering Countdown. Minutes:Seconds = " + timer.minutes + ":" + timer.seconds);
+
     if (timer.seconds > 0) {
-      timer.seconds--;
+      timer.seconds --;
     } else if (timer.minutes > 0) {
-      timer.minutes--;
+      timer.minutes --;
       timer.seconds = 59;
     } else {
-      window.clearInterval(timer.timeID);
+      window.clearInterval(timer.timeID)
       timer.timeID = null;
     }
-
+    console.log("Entering Countdown. Minutes:Seconds = " + timer.minutes + ":" + timer.seconds);
     minBox.value = timer.minutes;
     secBox.value = timer.seconds;
+    //timer.minutes = minBox.value
+    //timer.seconds = secBox.value
   }
 };
 
@@ -58,17 +65,18 @@ let runPauseTimer = document.getElementById("runPauseButton");
 // declare instance of timer object named myTimer
 let myTimer = new timer(minBox.value, secBox.value);
 
-minBox.onchange = function () {
+minBox.onchange = function() {
   myTimer.minutes = minBox.value;
-};
+}
 
-secBox.onchange = function () {
-  myTimer.seconds = secBox.value;
-};
+secBox.onchange = function() {
+ myTimer.seconds = secBox.value;
+}
 
-runPauseTimer.onclick = function () {
+runPauseTimer.onclick = function() {
   myTimer.runPause(myTimer, minBox, secBox);
-};
+}
+
 
 /* OLD CODE
 
