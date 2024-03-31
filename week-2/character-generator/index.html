@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+    Pragmatic JavaScript
+    Chapter 1
+    Programming Assignment
+
+    Author: Kylie Struhs
+    Date: March 30 2024
+    Filename: index.html
+
+    Instructions:
+    Create an HTML page with a form that allows the user to enter a character name,
+    select a character gender (male, female, other), and select a character class
+    (warrior, mage, rogue). Use CSS to style your form and make it visually appealing.
+    2. Write a JavaScript function that creates a new character. The function should take
+    the character name, gender, and class as formal parameters and return an object
+    with the following member functions:
+      a. getName: Returns the character’s name
+      b. getGender: Returns the character’s gender.
+      c. getClass: Returns the character’s class.
+    3. When a user clicks the “Create Character” form, use your function to create a new
+    character with the entered name, selected gender, and class.
+    4. Display the character’s name, gender, and class on the page. Use CSS to style the
+    information in a way that fits the theme of your game.
+    Hint:
+    • Remember to use closures to keep the character’s name, gender, and class only
+    accessible through the getName, getGender, and getClass member functions.
+    -->
+
+
+    <title>Roleplay Character Generator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Macondo&family=MedievalSharp&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id ="header">
+      <h1>Character Creator</h1>
+    </div>
+    <div id="mainContainer">
+      <form id="characterForm">
+        <label for="heroName">Hero Name:</label><br />
+        <input type="text" id="heroName" name="heroName" required /><br />
+        <label for="heroGender">Hero Gender:</label><br />
+        <select id="heroGender" name="heroGender" required>
+          <option value="">Select...</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option></select>
+          <br />
+        <label for="heroClass">Hero Class:</label><br />
+        <select id="heroClass" name="heroClass" required>
+          <option value="">Select...</option>
+          <option value="warrior">Warrior</option>
+          <option value="mage">Mage</option>
+          <option value="rogue">Rogue</option></select>
+          <br />
+        <button id="generateHero">Generate Hero</button>
+      </form>
+
+      <div id="characterOutput">
+      </div>
+      <div id = "img">
+        <img id ="picture" src="images/charactercreator.png">
+      </div>
+    </div>
+
+  </body>
+</html>

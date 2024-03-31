@@ -35,9 +35,11 @@ timer.prototype.runPause = function () {
   function countdown() {
     if (timer.seconds > 0) {
       timer.seconds--;
+      console.log("countdown function first if statement is working");
     } else if (timer.minutes > 0) {
       timer.minutes--;
       timer.seconds = 59;
+      console.log("countdown function first else statement");
     } else {
       window.clearInterval(timer.timeID);
       timer.timeID = null;
@@ -91,6 +93,7 @@ timer.prototype.runPause = function(timer, minBox, secBox) {
     timer.timeID = window.setInterval(countdown, 1000);
 
     console.log("first else statement is working");
+    }
 
     // add countdown function
     function countdown() {
@@ -113,7 +116,6 @@ timer.prototype.runPause = function(timer, minBox, secBox) {
       minBox.value = timer.minutes;
       secBox.value = timer.seconds;
        }
-      }
     }
 
 
