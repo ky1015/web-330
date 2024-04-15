@@ -21,23 +21,23 @@ let intList = new Array(48);
 let pointerX, pointerY, pieceX, pieceY;
 
 // Sort the integers from 1 to 48 in random order
-for (let i = 0; i < 48 ; i++) {
-   intList[i] = i+1;
+for (let i = 0; i < 48; i++) {
+  intList[i] = i + 1;
 }
-intList.sort(function() {
-   return 0.5 - Math.random();
+intList.sort(function () {
+  return 0.5 - Math.random();
 });
 
 // generate randomly-sorted puzzle pieces
 for (let i = 0; i < 48; i++) {
-   let piece = document.createElement("img");
-   piece.src = "piece" + intList[i] + ".png";
-   let rowNum = Math.ceil((i+1)/8);
-   let colNum = (i + 1) - (rowNum - 1)*8;
-   piece.style.top = (rowNum - 1)*98 + 7 + "px";
-   piece.style.left = (colNum - 1)*98 + 7 + "px";
-   piece.draggable = false; // override the default draggability of images
-   puzzleBoard.appendChild(piece);
+  let piece = document.createElement("img");
+  piece.src = "piece" + intList[i] + ".png";
+  let rowNum = Math.ceil((i + 1) / 8);
+  let colNum = i + 1 - (rowNum - 1) * 8;
+  piece.style.top = (rowNum - 1) * 98 + 7 + "px";
+  piece.style.left = (colNum - 1) * 98 + 7 + "px";
+  piece.draggable = false; // override the default draggability of images
+  puzzleBoard.appendChild(piece);
 }
 
 // Node list representing the puzzle pieces
@@ -51,29 +51,28 @@ for (let i = 0; i < pieces.length; i++) {
 }
 
 function grabPiece(e) {
-pointerX = e.clientX;
-pointerY = e.clientY;
-console.log("Mouse is at " + pointerX + "," +pointerY)
-e.target.style.touchAction = "none";
-zCounter ++;
-e.target.style.zIndex = zCounter;
+  pointerX = e.clientX;
+  pointerY = e.clientY;
+  console.log("Mouse is at " + pointerX + "," + pointerY);
+  e.target.style.touchAction = "none";
+  zCounter++;
+  e.target.style.zIndex = zCounter;
 
-// store initial values of piece
-pieceX = e.target.offsetLeft;
-pieceY = e.target.offsetTop;
-// add event listeners to the pieces
-e.target.addEventListener("pointermove", movePiece);
-e.target.addEventListener("pointerup", dropPiece);
+  // store initial values of piece
+  pieceX = e.target.offsetLeft;
+  pieceY = e.target.offsetTop;
+  // add event listeners to the pieces
+  e.target.addEventListener("pointermove", movePiece);
+  e.target.addEventListener("pointerup", dropPiece);
 }
 
 function movePiece(e) {
-  let currentX = e.clientX
-  let currentY = e.clientY
+  let currentX = e.clientX;
+  let currentY = e.clientY;
   let diffX = currentX - pointerX;
   let diffY = currentY - pointerY;
-  console.log("current x,y" + currentX + "," + currentY)
-  console.log("diff x,y" + diffX + "," + diffY)
-
+  console.log("current x,y" + currentX + "," + currentY);
+  console.log("diff x,y" + diffX + "," + diffY);
 
   // calculate piece's new position
   e.target.style.left = pieceX + diffX + "px";
@@ -82,5 +81,5 @@ function movePiece(e) {
 
 function dropPiece(e) {
   e.target.removeEventListener("pointermove", movePiece);
-  e.target.removeEventListener("pointerup", dropPiece)
+  e.target.removeEventListener("pointerup", dropPiece);
 }
