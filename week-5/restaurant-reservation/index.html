@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+      Pragmatic JavaScript
+      Chapter 2
+      Programming Assignment
+
+      Author: Kylie Struhs
+      Date: April 21 2024
+      Filename: index.html
+
+      Instructions: Create an HTML page with a form that allows the user to enter their name and select
+      a table number to reserve. Use CSS to style your form and make it visually appealing.
+    -->
+
+    <title>Table Reservation</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <header>
+    <div id="hero">
+      <img
+        src="images/omatikaya_logo_leaves.png"
+        alt="logo for Omatikaya Forest Cafe"
+      />
+    </div>
+  </header>
+  <body>
+    <div id="intro">
+      <h1>Welcome to the Omatikaya Forest Cafe!</h1>
+      <p>
+        Based on Pandora: the world of Avatar, this dining experience will
+        transport you to a different planet. You can choose to dine in the
+        Forest Room, the Cave Room, or the Ikran Rookery.
+      </p>
+      <p>
+        Tables 1-5 are in the Forest Room, tables 6-10 are in the Cave Room, and
+        tables 11-15 are in the Ikran Rookery. To reserve a table, please enter
+        your name and preferred table number, as well as a time from 1-12.
+      </p>
+    </div>
+    <div class="form-container">
+      <p id="message"></p>
+      <form id="reservationForm">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" /><br />
+        <label for="tableNumber">Table Number:</label><br />
+        <input type="number" id="tableNumber" name="tableNumber" /><br />
+        <label for="reservationTime">Time:</label> <br />
+        <input type="number" id="reservationTime" name="reservationTime" />
+        <br />
+        <input type="submit" value="Reserve" />
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
