@@ -1,0 +1,46 @@
+/*
+  Pragmatic JavaScript
+  Chapter 3
+  Programming Assignment
+
+  Author: Kylie Struhs
+  Date: May 1 2024
+  Filename: styles.css
+*/
+
+/* Add your CSS styles here */
+
+/* Header Style rules */
+
+  header {
+    background-color: #7c90a0;
+    color: #86bafe;
+    text-align: center;
+  }
+
+  h1 {
+    font-family: "Aldrich", sans-serif;
+    font-weight: bold;
+  }
+
+  p {
+    font-family: "Advent Pro", sans-serif;
+  }
+
+/* Body Style rules */
+  body {
+    background-color: #7c90a0;
+  }
+
+  hr {
+    border: 1px solid #86bafe;
+  }
+
+  img {
+    border:2px solid #86bafe;
+  }
+
+  div {
+    color: #36393b;
+  }
+
