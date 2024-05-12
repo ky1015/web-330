@@ -1,0 +1,36 @@
+/*
+  Pragmatic JavaScript
+  Chapter 4
+  Programming Assignment
+
+  Author: Kylie Struhs
+  Date: May 9 2024
+  Filename: styles.css
+*/
+
+/* Add your styles here */
+
+/* Style Rules for Header */
+
+header {
+  background-color: #fff275;
+}
+
+h1 {
+  text-align: center;
+  margin: auto;
+}
+
+/* Style Rules for Body */
+
+body {
+  background-color: #5b0c0b;
+}
+
+#movie-form {
+  text-align: center;
+}
+
+#movie-info {
+  background-color: white;
+}

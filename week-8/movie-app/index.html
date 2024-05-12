@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+      Pragmatic JavaScript
+      Chapter 4
+      Programming Assignment
+
+      Author: Kylie Struhs
+      Date: May 9 2024
+      Filename: index.html
+
+      Instructions:
+      Create a webpage that displays information about movies from an in-memory array using
+      JavaScript async/await, HTML, and CSS.
+        1. HTML: Build a form for the user to enter a movie title, and sections to display the
+        movie’s title, director, release year, and a brief synopsis.
+        2. CSS: Style your webpage to your liking. Make sure the movie information is clearly
+        visible and the layout is user-friendly.
+        3. JavaScript:
+          a. Define an array of movie objects. Each object should have properties for the
+          title, director, release year, and synopsis.
+          b. Define a function named fetchMovie(title). This function should return a
+          Promise that simulates fetching data for the given title from the array. Use
+          setTimeout to simulate the delay of a network request. The resolved value
+          should be the movie object that matches the title.
+          c. Define an async function named displayMovie. This function should be
+          called when the user submits the form. It should use await to wait for
+          fetchMovie to complete, then update the HTML of the page to display the
+          movie information.
+        4. Error Handling: Your fetchMovie function should reject with an error message if the
+        movie title is not found in the array. Your displayMovie function should handle these
+        errors and display an appropriate message on the webpage.
+    -->
+
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+   </head>
+  <header>
+    <h1>Movie Search</h1>
+  </header>
+  <body>
+    <div class="form-container">
+      <form id="movie-form">
+        <input type="text" id="title-input" placeholder="Enter movie title" />
+        <button type="submit" id="submit-button">Search</button>
+      </form>
+      <div id="movie-info">
+        <h2 id="movie-title"></h2>
+        <p id="movie-director"></p>
+        <p id="movie-year"></p>
+        <p id="movie-synopsis"></p>
+      </div>
+      <p id="error-message"></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
